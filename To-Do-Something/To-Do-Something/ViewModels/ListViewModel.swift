@@ -9,24 +9,12 @@ import Foundation
 import SwiftUI
 
 class ListViewModel: ObservableObject {
-    @Published var items: [ItemModel] = []{
-        didSet{
-            saveItems()
-        }
-    }
+    @Published var items: [ItemModel] = []
     
     let itemKey: String = "item.list"
     
     init(){
-        getItem()
-    }
-    
-    func getItem() {
-        if let data = UserDefaults.standard.data(forKey: itemKey){
-           if let savedData = try? JSONDecoder().decode([ItemModel].self, from: data){
-               self.items = savedData
-            }
-        }
+        self.items = DatabaseManager.getNoteModel().toItems()
     }
     
     func deleteItem(_ index: IndexSet){
@@ -39,7 +27,9 @@ class ListViewModel: ObservableObject {
     
     func addItem(_ title: String){
         let newItem = ItemModel(title: title, isCompleted: false)
+        saveItems(newItem)
         items.append(newItem)
+        
     }
     
     func updateItem(_ item: ItemModel){
@@ -48,9 +38,7 @@ class ListViewModel: ObservableObject {
         }
     }
     
-    func saveItems(){
-        if let encodedData = try? JSONEncoder().encode(items){
-            UserDefaults.standard.set(encodedData, forKey: itemKey)
-        }
+    func saveItems(_ item: ItemModel){
+        DatabaseManager.addNoteModel(item.toReamlModel())
     }
 }

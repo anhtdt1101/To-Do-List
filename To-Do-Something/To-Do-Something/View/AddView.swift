@@ -30,7 +30,6 @@ struct AddView: View {
                         .background(Color.accentColor)
                         .cornerRadius(10)
                 })
-                
             }.padding(14)
         }.navigationTitle("Add an item")
             .alert(isPresented: $showAlert, content: getAlert)
@@ -38,7 +37,6 @@ struct AddView: View {
     
     func didSelectSave(){
         if validate() {
-          
             listViewModel.addItem(textFText)
             presentationMode.wrappedValue.dismiss()
         }

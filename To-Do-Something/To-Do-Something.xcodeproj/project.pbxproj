@@ -16,11 +16,29 @@
 		26759A0D2A343FAE00498D1A /* ItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26759A0C2A343FAE00498D1A /* ItemsModel.swift */; };
 		26759A102A3447F100498D1A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26759A0F2A3447F100498D1A /* ListViewModel.swift */; };
 		26759A122A34521B00498D1A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26759A112A34521B00498D1A /* EmptyView.swift */; };
-		26759A152A345B0B00498D1A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26759A142A345B0B00498D1A /* RealmSwift.framework */; };
-		26759A172A345B0E00498D1A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26759A162A345B0E00498D1A /* Realm.framework */; };
 		26759A1B2A345B2800498D1A /* RealmServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26759A192A345B2800498D1A /* RealmServices.swift */; };
 		26759A1C2A345B2800498D1A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26759A1A2A345B2800498D1A /* DatabaseManager.swift */; };
+		26759A1F2A345DB900498D1A /* RNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26759A1E2A345DB900498D1A /* RNoteModel.swift */; };
+		26759A242A34644800498D1A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26759A162A345B0E00498D1A /* Realm.framework */; };
+		26759A252A34644800498D1A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26759A162A345B0E00498D1A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26759A272A34644A00498D1A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26759A142A345B0B00498D1A /* RealmSwift.framework */; };
+		26759A282A34644A00498D1A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26759A142A345B0B00498D1A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		26759A262A34644900498D1A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				26759A282A34644A00498D1A /* RealmSwift.framework in Embed Frameworks */,
+				26759A252A34644800498D1A /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		267599F12A342FA800498D1A /* To-Do-Something.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do-Something.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +55,7 @@
 		26759A162A345B0E00498D1A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		26759A192A345B2800498D1A /* RealmServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServices.swift; sourceTree = "<group>"; };
 		26759A1A2A345B2800498D1A /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		26759A1E2A345DB900498D1A /* RNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNoteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26759A172A345B0E00498D1A /* Realm.framework in Frameworks */,
-				26759A152A345B0B00498D1A /* RealmSwift.framework in Frameworks */,
+				26759A272A34644A00498D1A /* RealmSwift.framework in Frameworks */,
+				26759A242A34644800498D1A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				26759A182A345B1C00498D1A /* ManagerRealms */,
+				26759A1E2A345DB900498D1A /* RNoteModel.swift */,
 			);
 			path = RealmModel;
 			sourceTree = "<group>";
@@ -154,6 +174,7 @@
 				267599ED2A342FA800498D1A /* Sources */,
 				267599EE2A342FA800498D1A /* Frameworks */,
 				267599EF2A342FA800498D1A /* Resources */,
+				26759A262A34644900498D1A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +237,7 @@
 			files = (
 				26759A0A2A343E1E00498D1A /* AddView.swift in Sources */,
 				26759A062A343C7300498D1A /* ListView.swift in Sources */,
+				26759A1F2A345DB900498D1A /* RNoteModel.swift in Sources */,
 				26759A102A3447F100498D1A /* ListViewModel.swift in Sources */,
 				26759A1B2A345B2800498D1A /* RealmServices.swift in Sources */,
 				26759A0D2A343FAE00498D1A /* ItemsModel.swift in Sources */,
